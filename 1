@@ -1,0 +1,55 @@
+Задание1
+a=int(input('Введите первое число'))
+b=input('Введите опцию(+,-,*,/)')
+c=int(input('Введите второе числло'))
+s=0
+if b=='+':
+    s=a+c;
+if b=='-':
+    s=a-c;
+if b=='*':
+    s=a*c;
+if b=='/':
+    s=a/c;
+print(s)
+----------------------------------
+Задание2
+word = input("Enter a word in English:")
+vowels = 0
+consonants = 0
+for i in word:
+    letter = i.lower()
+    if letter == "a" or letter == "e" or\
+       letter == "i" or letter == "o" or\
+       letter == "u" or letter == "y":
+        vowels += 1
+    else:
+        consonants += 1
+print("Vowels %i\nConsonants %i" % (vowels, consonants))
+--------------------------------------
+Задание3
+words = open("word.txt", "r").read().split()
+long_word = ""
+lm = 0
+for x in words:
+    l = len(x)
+    if l > lm:
+       long_word = x
+       lm = l
+print(long_word)
+--------------------------------------
+Задание4
+from random import uniform
+
+num = [uniform(-100, 100) for i in range(10)]
+print(num)
+print(sorted(num, key=lambda x: abs(x - int(x))))
+------------------------------------
+Задание5
+from collections import Counter
+
+with open("text.txt") as f:
+    c = Counter()
+    for x in f:
+        c += Counter(x.strip())
+print(c)
